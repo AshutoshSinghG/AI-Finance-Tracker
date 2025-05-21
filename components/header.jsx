@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "./ui/button";
-import { PenBox, LayoutDashboard } from "lucide-react";
+import { PenBox, LayoutDashboard, chart } from "lucide-react";
 import Link from "next/link";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 import { checkUser } from "@/lib/checkUser";
@@ -40,6 +40,12 @@ const Header = async () => {
         {/* Action Buttons */}
         <div className="flex items-center space-x-4">
           <SignedIn>
+            <a href="/account/ac9bc775-ff31-4ffc-9f75-3899ac4d740e">
+              <Button className="flex items-center gap-2">
+                <chart size={18} />
+                <span className="hidden md:inline">Analyze Finances</span>
+              </Button>
+            </a>
             <Link
               href="/dashboard"
               className="text-gray-600 hover:text-blue-600 flex items-center gap-2"
