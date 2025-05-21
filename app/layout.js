@@ -8,8 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Fintelli – Smart Personal Finance Management",
-  description: "AI-powered finance tracker to monitor expenses, manage budgets, and analyze spending patterns with intelligent insights. Simplify your finances with AI.
-",
+  description: "AI-powered finance tracker to monitor expenses, manage budgets, and analyze spending patterns with intelligent insights. Simplify your finances with AI.",
 };
 
 export default function RootLayout({ children }) {
