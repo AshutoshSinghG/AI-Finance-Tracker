@@ -4,10 +4,18 @@ import { PenBox, LayoutDashboard, BarChart3 } from "lucide-react";
 import Link from "next/link";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 import { checkUser } from "@/lib/checkUser";
+import { db } from "@/lib/prisma";
 import Image from "next/image";
 
 const Header = async () => {
   const dbUser = await checkUser();
+
+  const defaultAccount = await db.account.findFirst({
+    where: {
+      userId: dbUser?.id,
+      isDefault: true
+    }
+  });
 
   return (
     <header className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b">
@@ -40,7 +48,7 @@ const Header = async () => {
         {/* Action Buttons */}
         <div className="flex items-center space-x-4">
           <SignedIn>
-            <Link href={`/account/${dbUser?.id}`}
+            <Link href={`/account/${defaultAccount?.id}`}
  className="text-gray-600 hover:text-blue-600 flex items-center gap-2"
             >
               <Button variant="outline">
