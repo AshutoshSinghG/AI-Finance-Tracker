@@ -41,7 +41,7 @@ const Header = async () => {
         <div className="flex items-center space-x-4">
           <SignedIn>
             <Link href="/account/ac9bc775-ff31-4ffc-9f75-3899ac4d740e"
- className="text-gray-600 hover:text-blue-600 flex items-center bg-blue-50 gap-2"
+ className="text-gray-600 hover:text-blue-600 flex items-center gap-2"
             >
               <Button variant="outline">
                 <BarChart3 className="h-8 w-8 text-grey-600" />
