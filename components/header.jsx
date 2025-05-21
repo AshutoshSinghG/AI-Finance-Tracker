@@ -7,7 +7,7 @@ import { checkUser } from "@/lib/checkUser";
 import Image from "next/image";
 
 const Header = async () => {
-  await checkUser();
+  const dbUser = await checkUser();
 
   return (
     <header className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b">
@@ -40,7 +40,7 @@ const Header = async () => {
         {/* Action Buttons */}
         <div className="flex items-center space-x-4">
           <SignedIn>
-            <Link href="/account/ac9bc775-ff31-4ffc-9f75-3899ac4d740e"
+            <Link href={`/account/${dbUser?.id}`}
  className="text-gray-600 hover:text-blue-600 flex items-center gap-2"
             >
               <Button variant="outline">
